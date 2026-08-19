@@ -138,15 +138,13 @@ void freeList(Node **head) {
       Node *current = *head;
       while (current != NULL) {
             Node *temp = current;
-
             current = current->next;
-
             free(temp);
       }
       *head = NULL;
 }
 
-int main() {
+void main() {
       Node *head = NULL;
       insertAtBeginning(&head, 30);
       insertAtBeginning(&head, 20);
@@ -181,5 +179,4 @@ int main() {
       printf("\nAfter deleting 35:\n");
       printList(head);
       freeList(&head);
-      return 0;
 }
